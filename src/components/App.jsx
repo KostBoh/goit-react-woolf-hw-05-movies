@@ -9,7 +9,6 @@ import Reviews from './Reviews/Reviews';
 export const App = () => {
   return (
     <>
-      <h2>App</h2>
       <Routes>
         <Route path="/" element={<Header />}>
           <Route index element={<Home />} />
