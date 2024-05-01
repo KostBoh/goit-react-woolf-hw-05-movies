@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 
 const MovieInfo = ({
   id,
-  movieId,
   title,
   posterPath,
   overview,
