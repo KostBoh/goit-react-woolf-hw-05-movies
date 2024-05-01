@@ -31,7 +31,7 @@ const MovieInfo = ({
         </li>
         <li>
           <Link
-            to={`/movies/${movieId}/reviews`}
+            to={`/movies/${id}/reviews`}
             state={{ from: location.pathname }}
           >
             Reviews

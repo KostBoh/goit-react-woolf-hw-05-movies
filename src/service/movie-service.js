@@ -2,7 +2,7 @@ import axios from 'axios';
 import { transformMoviesData } from '../helpers/transformMoviesData';
 import { transformSearchMoviesData } from 'helpers/transformSearchMoviesData';
 import { transformMovieDetailsData } from 'helpers/transformMovieDetailsData';
-import { transformMovieCreditsData } from 'helpers/transformMovieCreditsData';
+// import { transformMovieCreditsData } from 'helpers/transformMovieCreditsData';
 import { transformMovieReviewsData } from 'helpers/transformMovieReviewsData';
 
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
@@ -73,7 +73,7 @@ export const getMovieCredits = async movieId => {
           'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YTE5OWQyNzIzOTBjYTJhMDU0ZTk5MTBmOGU5ZGVjYyIsInN1YiI6IjY2MzIwYTdiMzU4ZGE3MDEyNDU0MjQ1OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.05W8GlYUN0AfXErAyeK8vkcPYyMXGFAW9v-mZKKs944',
       },
     });
-    return transformMovieCreditsData(response.data);
+    return response.data;
   } catch (error) {
     console.error('Error fetching movie credits:', error);
     return [];

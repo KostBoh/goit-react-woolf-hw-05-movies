@@ -1,7 +1,7 @@
 import Loader from 'components/Loader/Loader';
 import MovieInfo from 'components/MovieInfo/MovieInfo';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 import { getMovieDetails } from 'service/movie-service';
 
 const MovieDetails = () => {
@@ -20,13 +20,12 @@ const MovieDetails = () => {
       });
   }, [movieId]);
 
-  console.log(movie);
-
   return (
     <>
       {isLoading && <Loader />}
-      <MovieInfo {...movie} />
+      {movie && <MovieInfo {...movie} />}
       {error && <h2>Something went wrong...</h2>}
+      <Outlet />
     </>
   );
 };
