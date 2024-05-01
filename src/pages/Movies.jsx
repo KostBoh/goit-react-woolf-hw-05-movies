@@ -1,7 +1,16 @@
+import SearchForm from 'components/SearchForm/SearchForm';
 import React from 'react';
 
 const Movies = () => {
-  return <div>Movies</div>;
+  const handleSearchSubmit = value => {
+    console.log(value);
+  };
+
+  return (
+    <>
+      <SearchForm onSubmit={handleSearchSubmit} />
+    </>
+  );
 };
 
 export default Movies;

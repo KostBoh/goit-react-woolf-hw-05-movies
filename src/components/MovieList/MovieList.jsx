@@ -5,10 +5,10 @@ const MovieList = ({ movies }) => {
   const location = useLocation();
   return (
     <ul>
-      {movies.map(movie => (
-        <li key={movie.id}>
-          <Link to={`/movies/${movie.id}`} state={{ from: location.pathname }}>
-            <p>{movie.title}</p>
+      {movies.map(({ id, title }) => (
+        <li key={id}>
+          <Link to={`/movies/${id}`} state={{ from: location.pathname }}>
+            <p>{title}</p>
           </Link>
         </li>
       ))}
