@@ -8,9 +8,14 @@ const MovieInfo = ({
   overview,
   voteAverage,
   releaseDate,
+  onFetchCast,
 }) => {
   const baseURL = 'https://image.tmdb.org/t/p/w500';
   const location = useLocation();
+
+  const handleFetchCast = () => {
+    onFetchCast();
+  };
 
   return (
     <>
@@ -24,7 +29,11 @@ const MovieInfo = ({
       <h3>Additional information</h3>
       <ul>
         <li>
-          <Link to={`/movies/${id}/cast`} state={{ from: location.pathname }}>
+          <Link
+            to={`/movies/${id}/cast`}
+            state={{ from: location.pathname }}
+            onClick={handleFetchCast}
+          >
             Casts
           </Link>
         </li>

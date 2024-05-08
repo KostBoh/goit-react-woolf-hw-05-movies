@@ -1,19 +1,20 @@
 import React from 'react';
 
 const Cast = ({ cast }) => {
-  const baseURL = 'https://image.tmdb.org/t/p/w500';
+  const baseURL = 'http://image.tmdb.org/t/p/w185';
+  if (!cast) {
+    return null;
+  }
   return (
-    <ul>
-      {cast.map(({ id, original_name, character, profile_path }) => (
+    <>
+      {cast.map(({ id, name, character, profile_path }) => (
         <li key={id}>
-          <p> Original name: {original_name}</p>
+          {profile_path && <img src={`${baseURL}${profile_path}`} alt={name} />}
+          <p> {name}</p>
           <p>Character: {character}</p>
-          {profile_path && (
-            <img src={`${baseURL}${profile_path}`} alt={original_name} />
-          )}
         </li>
       ))}
-    </ul>
+    </>
   );
 };
 
