@@ -9,6 +9,7 @@ const MovieInfo = ({
   voteAverage,
   releaseDate,
   onFetchCast,
+  genres,
 }) => {
   const baseURL = 'https://image.tmdb.org/t/p/w500';
   const location = useLocation();
@@ -20,11 +21,13 @@ const MovieInfo = ({
   return (
     <>
       <h2>{title}</h2>
+
       <img src={`${baseURL}${posterPath}`} alt={title} />
       <h3>Overview</h3>
       <p>{overview}</p>
       <p>User score: {voteAverage}</p>
-      <p>{releaseDate}</p>
+      <h3>Genres</h3>
+      <p>{genres}</p>
       <hr />
       <h3>Additional information</h3>
       <ul>

@@ -7,9 +7,9 @@ const Cast = ({ cast }) => {
   }
   return (
     <>
-      {cast.map(({ id, name, character, profile_path }) => (
+      {cast.map(({ id, name, character, profilePath }) => (
         <li key={id}>
-          {profile_path && <img src={`${baseURL}${profile_path}`} alt={name} />}
+          {profilePath && <img src={`${baseURL}${profilePath}`} alt={name} />}
           <p> {name}</p>
           <p>Character: {character}</p>
         </li>
