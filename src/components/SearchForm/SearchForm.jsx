@@ -8,8 +8,6 @@ const SearchForm = ({ onSubmit }) => {
   };
 
   const handleSubmit = e => {
-    //   const handleSubmit= value => {
-    // setSearchParams({ query: value });
     e.preventDefault();
     onSubmit(search);
     setSearch('');

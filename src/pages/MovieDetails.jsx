@@ -1,4 +1,3 @@
-// import Cast from 'components/Cast/Cast';
 import Cast from 'components/Cast/Cast';
 import Loader from 'components/Loader/Loader';
 import MovieInfo from 'components/MovieInfo/MovieInfo';
@@ -14,7 +13,6 @@ import {
 const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
-  // const [cast, setCast] = useState(null);
   const [detailsType, setDetailsType] = useState(null);
   const [details, setDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -47,22 +45,13 @@ const MovieDetails = () => {
     }
   };
 
-  // const handleFetchCast = () => {
-  //   setIsLoading(true);
-  //   getMovieCredits(movieId)
-  //     .then(setCast)
-  //     .catch(({ message }) => setError(message))
-  //     .finally(() => {
-  //       setIsLoading(false);
-  //     });
-  // };
-
   return (
     <>
       {isLoading && <Loader />}
       {movie && (
         <>
           <MovieInfo {...movie} onFetchDetails={handleFetchDetails} />
+          <hr />
           <Outlet />
           {location.pathname.includes('cast') &&
             detailsType === 'Cast' &&
@@ -76,11 +65,6 @@ const MovieDetails = () => {
           {location.pathname.includes('reviews') &&
             detailsType === 'Reviews' &&
             details && <Reviews reviews={details} />}
-
-          {/* <MovieInfo {...movie} onFetchCast={handleFetchCast} />
-          <Outlet />
-          {location.pathname.includes('cast') && cast === null && <Loader />}
-          {cast !== null && <Cast cast={cast} />} */}
         </>
       )}
       {error && <h2>Something went wrong...</h2>}

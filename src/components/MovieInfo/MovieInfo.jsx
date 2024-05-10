@@ -7,26 +7,15 @@ const MovieInfo = ({
   posterPath,
   overview,
   voteAverage,
-  // releaseDate,
-  // onFetchCast,
   onFetchDetails,
   genres,
 }) => {
   const baseURL = 'https://image.tmdb.org/t/p/w500';
   const location = useLocation();
 
-  // const handleFetchCast = () => {
-  //   onFetchCast();
-  // };
-
-  // const handleFetchDetails = () => {
-  //   onFetchDetails();
-  // };
-
   return (
     <>
       <h2>{title}</h2>
-
       <img src={`${baseURL}${posterPath}`} alt={title} />
       <h3>Overview</h3>
       <p>{overview}</p>

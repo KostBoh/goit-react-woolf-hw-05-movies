@@ -2,12 +2,11 @@ import React from 'react';
 
 const Reviews = ({ reviews }) => {
   if (!reviews || !reviews.length) {
-    return null; // або можна повернути <div>No reviews available</div>
+    return null;
   }
 
   return (
     <div>
-      <h2>Reviews</h2>
       <ul>
         {reviews.map(({ id, author, content }) => (
           <li key={id}>
