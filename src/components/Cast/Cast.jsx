@@ -10,8 +10,8 @@ const Cast = ({ cast }) => {
       {cast.map(({ id, name, character, profilePath }) => (
         <li key={id}>
           {profilePath && <img src={`${baseURL}${profilePath}`} alt={name} />}
-          <p> {name}</p>
-          <p>Character: {character}</p>
+          <h4> {name}</h4>
+          <h4>Character: {character}</h4>
         </li>
       ))}
     </>

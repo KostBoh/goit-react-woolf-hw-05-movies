@@ -17,13 +17,14 @@ const MovieInfo = ({
     <>
       <h2>{title}</h2>
       <img src={`${baseURL}${posterPath}`} alt={title} />
-      <h3>Overview</h3>
+      <h4>Overview</h4>
       <p>{overview}</p>
-      <p>User score: {voteAverage}</p>
-      <h3>Genres</h3>
+      <h4>User score: </h4>
+      <p>{voteAverage}</p>
+      <h4>Genres: </h4>
       <p>{genres}</p>
       <hr />
-      <h3>Additional information</h3>
+      <h4>Additional information</h4>
       <ul>
         <li>
           <Link
