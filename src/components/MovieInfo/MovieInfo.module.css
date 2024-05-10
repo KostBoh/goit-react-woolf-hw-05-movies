@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.poster {
+  margin-right: 20px;
+}
+
+.info {
+  flex: 1;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.overview {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.userScore {
+  font-size: 16px;
+}
+
+.genres {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.additionalInfo {
+  margin-top: 20px;
+}
+
+.additionalInfo h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}

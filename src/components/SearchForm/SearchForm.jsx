@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './SearchForm.module.css';
 
 const SearchForm = ({ onSubmit }) => {
   const [search, setSearch] = useState('');
@@ -14,9 +15,17 @@ const SearchForm = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input value={search} onChange={handleChange} type="text" autoFocus />
-      <button type="submit">Search</button>
+    <form onSubmit={handleSubmit} className={styles.searchForm}>
+      <input
+        value={search}
+        onChange={handleChange}
+        type="text"
+        autoFocus
+        className={styles.input}
+      />
+      <button type="submit" className={styles.button}>
+        Search
+      </button>
     </form>
   );
 };

@@ -1,0 +1,26 @@
+.castList {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 10px;
+}
+
+.castItem {
+  margin-bottom: 20px;
+}
+
+.castImage {
+  width: 150px;
+  height: auto;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.castName {
+  margin-bottom: 5px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.castCharacter {
+  font-style: italic;
+}
