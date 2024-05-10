@@ -7,16 +7,21 @@ const MovieInfo = ({
   posterPath,
   overview,
   voteAverage,
-  releaseDate,
-  onFetchCast,
+  // releaseDate,
+  // onFetchCast,
+  onFetchDetails,
   genres,
 }) => {
   const baseURL = 'https://image.tmdb.org/t/p/w500';
   const location = useLocation();
 
-  const handleFetchCast = () => {
-    onFetchCast();
-  };
+  // const handleFetchCast = () => {
+  //   onFetchCast();
+  // };
+
+  // const handleFetchDetails = () => {
+  //   onFetchDetails();
+  // };
 
   return (
     <>
@@ -35,7 +40,7 @@ const MovieInfo = ({
           <Link
             to={`/movies/${id}/cast`}
             state={{ from: location.pathname }}
-            onClick={handleFetchCast}
+            onClick={() => onFetchDetails('Cast')}
           >
             Casts
           </Link>
@@ -44,6 +49,7 @@ const MovieInfo = ({
           <Link
             to={`/movies/${id}/reviews`}
             state={{ from: location.pathname }}
+            onClick={() => onFetchDetails('Reviews')}
           >
             Reviews
           </Link>
