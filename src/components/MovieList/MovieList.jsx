@@ -10,7 +10,7 @@ const MovieList = ({ movies }) => {
         <li key={id} className={styles.movieItem}>
           <Link
             to={`/movies/${id}`}
-            state={{ from: location.pathname }}
+            state={{ from: location }}
             className={styles.movieLink}
           >
             <p className={styles.movieTitle}>{title}</p>

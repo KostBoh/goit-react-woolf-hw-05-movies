@@ -1,16 +1,20 @@
+.container {
+  padding: 20px;
+  max-width: 1200px;
+}
+
 .goBackLink {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #007bff;
   text-decoration: none;
-  color: white;
-  background-color: rgb(42, 41, 41);
-  padding-right: 20px;
-  padding-left: 20px;
-  margin-left: 10px;
-  border: none;
-  border-radius: 2px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
 }
 
 .goBackLink:hover {
-  background-color: #767373;
+  text-decoration: underline;
+}
+
+.details {
+  margin-top: 20px;
 }

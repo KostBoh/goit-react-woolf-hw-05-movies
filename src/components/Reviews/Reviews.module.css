@@ -1,12 +1,14 @@
-.reviews {
-  margin-top: 20px;
+.reviewsContainer {
+  padding: 20px;
+}
+
+.reviewsList {
+  list-style: none;
+  padding: 0;
 }
 
 .reviewItem {
   margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
 }
 
 .author {
@@ -14,5 +16,5 @@
 }
 
 .content {
-  margin-top: 5px;
+  margin: 10px 0 0;
 }
