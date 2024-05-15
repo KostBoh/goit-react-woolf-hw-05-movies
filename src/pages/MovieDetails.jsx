@@ -1,11 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import {
-  Link,
-  Outlet,
-  useParams,
-  useLocation,
-  // useNavigate,
-} from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 import Loader from 'components/Loader/Loader';
 import MovieInfo from 'components/MovieInfo/MovieInfo';
 import { getMovieDetails } from 'service/movie-service';
@@ -17,7 +11,6 @@ const MovieDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const location = useLocation();
-  // const navigate = useNavigate();
 
   useEffect(() => {
     setIsLoading(true);
@@ -27,18 +20,14 @@ const MovieDetails = () => {
       .finally(() => setIsLoading(false));
   }, [movieId]);
 
-  const goBack = location.state?.from || '/';
-  // const goBack = () => {
-  //   navigate(location?.state.from || '/');
-  // };
+  const goBack = useRef(location.state?.from || '/');
 
   return (
     <div className={styles.container}>
       {isLoading && <Loader />}
       {movie && (
         <>
-          <Link to={goBack} className={styles.goBackLink}>
-            {/* <Link onClick={goBack} className={styles.goBackLink}> */}
+          <Link to={goBack.current} className={styles.goBackLink}>
             Go Back
           </Link>
           <MovieInfo {...movie} />
